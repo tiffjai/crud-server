@@ -55,7 +55,7 @@ const destroy = async (req, res) => {
     try {
         const fruit = await Fruit.show(name)
         const deleteFruit = await fruit.destroy()
-        res.status(200).send(deleteFruit)
+        res.sendStatus(204)
     } catch (err) {
         res.status(404).send({error: err})
     }
