@@ -54,7 +54,7 @@ const destroy = async (req, res) => {
     const name = req.params.name.toLowerCase();
     try {
         const fruit = await Fruit.show(name)
-        const deleteFruit = await fruit.delete(req.body)
+        const deleteFruit = await fruit.destroy()
         res.status(200).send(deleteFruit)
     } catch (err) {
         res.status(404).send({error: err})
